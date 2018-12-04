@@ -49,7 +49,8 @@ class Juego {
 
   // Elementos de bootstrap son cargadas y el tablero es generado, segunda parte de la carga del juego.
   bootstrap() {
-    const userImage = this.user + "_image";
+    //const userImage = this.user + "_image";
+    const userImage=this.user
     const scoreBoard = $(
       '<div class="row"><div class="col"><img id="avatar" src="' +
         userImage +
@@ -70,7 +71,7 @@ class Juego {
     const cols = getColCount(this.level);
     const cardsContainer = this.root.children("#tablero");
     for (let r = 0; r < rows; r++) {
-      const row = $('<div class="card-deck"></div>');
+      const row = $('<div class="card-deck img-thumbnail"></div>');
       for (let c = 0; c < cols; c++) {
         const card = this.tablero[r * cols + c];
         row.append(card.domNode);
@@ -114,7 +115,7 @@ class Juego {
 
   // Avanza a pantalla de resultados
   gotoNextScreen() {
-    window.location.href = "http://stackoverflow.com";
+    window.location.href = "felicidades.html";
   }
 
   //Guarda la puntuacion en el localstorage
@@ -195,7 +196,7 @@ class Juego {
     }
     juego.selectedCards.push(card);
     card.show();
-    setTimeout(juego.makeMatch, 800);
+    setTimeout(juego.makeMatch, 400);
   }
 
   genLevelCards(level) {

@@ -52,8 +52,8 @@
 */
 
 #bienvenida{
-    color: #ab4924;font-family: 'Vibur', cursive;font-size: 30pt;font-weight: 900;text-align: center;}
-#bienvenida span {font-size: 22pt}
+    color: #f9e75e;font-family: 'Vibur', cursive;font-size: 30pt;font-weight: 900;text-align: center;}
+#bienvenida span {font-size: 40pt}
 
 /*centra en medio las cosas*/
     .centrado-porcentual {
@@ -71,7 +71,7 @@
 
 /*para imagen de fondo*/
 body{
-	background: url("../img/inicioPortada.jpg") no-repeat center center fixed;
+	background: url("../images/inicio2.gif") no-repeat center center fixed;
 /*background-color: #BDBDBD;*/
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
@@ -90,13 +90,16 @@ transform: rotate(360deg);
 -webkit-transform: rotate(360deg);
 }
 
-
+#excursiones {
+}
 .item-excursion {
     text-align: center;
     cursor: pointer;
     margin: 20px;
 }
-
+.item {
+    
+}
 .title {
     width: 100%;
 }
@@ -114,13 +117,6 @@ transform: rotate(360deg);
 
 .btnp{background-color: #f73859;padding: 25px 50px;border-radius: 50px;border: none}
 .btn{background-color: #f73859;padding: 10px 20px;border-radius: 20px;border: none}
-
-.btn-dimensiones{
-  width: 1200px;
-/*  background-color: red;*/
-  display: flex;
-  justify-content: center;
-}
 
 .linkRegresar{text-align: center;display: block;color: white}
 

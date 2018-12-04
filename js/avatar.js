@@ -1,33 +1,55 @@
-var avatares='[{"nombre":"nino1.png","id":1,"puntos":0},{"nombre":"nino2.png","id":2,"puntos":0},{"nombre":"nino3.png","id":3,"puntos":0},{"nombre":"nino4.png","id":4,"puntos":0}]';
-//var avatares='[{"nombre":"nino1.png","id":1},{"nombre":"nino2.png","id":2},{"nombre":"nino3.png","id":3},{"nombre":"nino4.png","id":4}]';
+var conten=document.getElementById("avatares");
 
-
-var conten=document.getElementById("personajes");
-var datos=JSON.parse(avatares);
+var datos=JSON.parse(localStorage.getItem("personajes"));
+var mostra="";
 
 for (var img in datos) {
-  conten.innerHTML+="<td id='tabla'><a href='explicacion.html?"+datos[img].nombre+"'  id='"+datos[img].id+"'><img class='rounded-circle' id='imgen' src='imagenes/"+datos[img].nombre+"''></a></td>";
-  //var accion= document.getElementById("'"+datos[img].id+"'");
-//var accion= document.getElementById("btn");
-//  accion.addEventListener("click", colocarAvatar);
-console.log(datos[img]);
+  var celda = document.createElement("div");
+  var puntos= document.createElement("h4");
+  puntos.textContent=datos[img].puntos+" puntos";
+  var imagenAvatar = document.createElement("img");
+
+  imagenAvatar.src=datos[img].nombre+'';
+  imagenAvatar.setAttribute("onclick","sesion("+img+")");
+  var link = document.createElement("a");
+  link.href='explicacion.html';
+
+celda.appendChild(puntos);
+celda.appendChild(link);
+
+link.appendChild(imagenAvatar);
+conten.appendChild(celda); //agrega los avatares
+
+//console.log(datos[img]);
 }
 
- function colocarAvatar(nombre){
-  let img = document.getElementById("personajes");
-  //var nombre="avatar1.png";
-  img.innerHTML="<img src='/imagenes/"+nombre+"'>";
+
+function sesion(indice){
+  var avatar;
+avatar= datos[indice];
+
+//  localStorage.clear();
+  localStorage.setItem("sesion",JSON.stringify(avatar));
+
 }
 
+// var descargar=document.getElementById("export-button");
+// descargar.addEventListener('click', exportJSON);
 
+// function exportJSON() {
+//     //var IEwindow = window.open();
+//     //IEwindow.document.write('sep=,\r\n' + JSON.stringify(objJSON));
+//     //IEwindow.document.close();
+//     //IEwindow.document.execCommand('SaveAs', true, "datos.json");
+//     //IEwindow.close();
 
+//     let dataStr = JSON.stringify(datos);
+//     let dataUri = 'data:application/json;charset=utf-8,' + encodeURIComponent(dataStr);
 
+//     let exportFileDefaultName = '../personajes.json';
 
-// function sesion(indice){
-//   var avatar
-// avatar= datos[indice];
-
-// //  localStorage.clear();
-//   localStorage.setItem("sesion",JSON.stringify(avatar));
-
+//     let linkElement = document.createElement('a');
+//     linkElement.setAttribute('href', dataUri);
+//     linkElement.setAttribute('download', exportFileDefaultName);
+//     linkElement.click();
 // }
