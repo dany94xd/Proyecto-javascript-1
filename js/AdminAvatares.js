@@ -28,6 +28,8 @@ function dibujarTablaAvatares(){
     )
     listarAvatares();
 }
+
+//.append($('<td>').append(avatar.nombre)) muestra el nombre
 function listarAvatares(){
     $.each(arrayAvaters, function(index, avatar){
         $('#avatares').append($('<tr>')

@@ -1,4 +1,4 @@
-const defaultImage = "img/asd.png";
+const defaultImage = "img/card.png";
 class Card {
   constructor(id, image) {
     this.image = image;

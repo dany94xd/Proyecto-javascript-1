@@ -33,23 +33,23 @@ avatar= datos[indice];
 
 }
 
-// var descargar=document.getElementById("export-button");
-// descargar.addEventListener('click', exportJSON);
+var descargar=document.getElementById("export-button");
+descargar.addEventListener('click', exportJSON);
 
-// function exportJSON() {
-//     //var IEwindow = window.open();
-//     //IEwindow.document.write('sep=,\r\n' + JSON.stringify(objJSON));
-//     //IEwindow.document.close();
-//     //IEwindow.document.execCommand('SaveAs', true, "datos.json");
-//     //IEwindow.close();
+function exportJSON() {
+    //var IEwindow = window.open();
+    //IEwindow.document.write('sep=,\r\n' + JSON.stringify(objJSON));
+    //IEwindow.document.close();
+    //IEwindow.document.execCommand('SaveAs', true, "datos.json");
+    //IEwindow.close();
 
-//     let dataStr = JSON.stringify(datos);
-//     let dataUri = 'data:application/json;charset=utf-8,' + encodeURIComponent(dataStr);
+    let dataStr = JSON.stringify(datos);
+    let dataUri = 'data:application/json;charset=utf-8,' + encodeURIComponent(dataStr);
 
-//     let exportFileDefaultName = '../personajes.json';
+    let exportFileDefaultName = '../personajes.json';
 
-//     let linkElement = document.createElement('a');
-//     linkElement.setAttribute('href', dataUri);
-//     linkElement.setAttribute('download', exportFileDefaultName);
-//     linkElement.click();
-// }
+    let linkElement = document.createElement('a');
+    linkElement.setAttribute('href', dataUri);
+    linkElement.setAttribute('download', exportFileDefaultName);
+    linkElement.click();
+}
