@@ -9,7 +9,7 @@ for (var img in datos) {
   puntos.textContent=datos[img].puntos+" puntos";
   var imagenAvatar = document.createElement("img");
 
-  imagenAvatar.src=datos[img].nombre+'';
+  imagenAvatar.src= datos[img].nombre+'';
   imagenAvatar.setAttribute("onclick","sesion("+img+")");
   var link = document.createElement("a");
   link.href='explicacion.html';

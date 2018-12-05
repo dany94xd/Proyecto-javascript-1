@@ -1,6 +1,6 @@
 body {
-margin-top: 3em;
-padding: 50px;
+/*margin-top: 3em;*/
+/*padding: 50px;*/
 font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 background-image: url("../img/iniciar.jpg") ;
 background-repeat: no-repeat;
@@ -15,6 +15,22 @@ height: 100vh;
 a {
   color: #00B7FF;
 }
+/****avatar.html******/
+#avatares {
+  margin-top: 100px; 
+  margin-bottom: 15px;
+  border-collapse: collapse
+}
+/***********/
+
+/****felicidades.html******/
+#idPremiacion {
+  margin-top: 100px; 
+  margin-bottom: 15px;
+  border-collapse: collapse
+}
+/***********/
+
 
 .img-perfil {
   max-width: 100px;

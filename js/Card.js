@@ -32,9 +32,9 @@ class Card {
   hide() {
     console.log("hiding", this.image);
     const self = this;
-    this.imgNode.delay(800).fadeOut("slow", function() {
+    this.imgNode.delay(600).fadeOut("fast", function() {
       self.imgNode.attr("src", defaultImage);
-      self.imgNode.fadeIn("slow");
+      self.imgNode.fadeIn("fast");
     });
   }
 

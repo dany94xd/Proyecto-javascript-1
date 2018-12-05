@@ -193,8 +193,8 @@ $("#btn-agregar-avatar").click(function(){
 
         dibujarTablaAvatares();
 
-        $("#agregar-avatares").hide();
-        $(".agregar-avatares").hide();
+        $("#agregar-avatar").hide();
+        $(".agregar-avatar").hide();
 
     }else{
         alert("Llene los campos")

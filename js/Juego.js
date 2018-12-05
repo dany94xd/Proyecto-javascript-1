@@ -1,3 +1,4 @@
+var topGame= document.getElementById("idTopGame"); 
 // Obtiene la cantidad de filas por nivel
 function getRowCount(level) {
   return 2;
@@ -36,7 +37,7 @@ class Juego {
     this.tablero = this.genTablero(1);
     this.puntos = 0;
   }
-
+ 
   getRand(max, min) {
     return Math.floor(Math.random() * (max - min));
   }
@@ -47,7 +48,7 @@ class Juego {
     this.bootstrap();
   }
 
-  // Elementos de bootstrap son cargadas y el tablero es generado, segunda parte de la carga del juego.
+  // Elementos de bootstrap son cargadas y el tablero es generado(PINTADO), segunda parte de la carga del juego.
   bootstrap() {
     //const userImage = this.user + "_image";
     const userImage=this.user
@@ -56,6 +57,18 @@ class Juego {
         userImage +
         '" /><h2>Puntos: <span id="score"></span></h2></div></div>'
     );
+    
+    
+    /*&&&&&****PRUEBA******&&&&*/
+    const scoreBoardDOS = $(
+      '<div class="row"><div class="col"><img id="avatar" src="' +
+        userImage +
+        '" /><h2>Puntos: <span id="score"></span></h2></div></div>'
+    ); 
+    //topGame.append(scoreBoardDOS);
+    /******%%%% fin prueba%%%%%%*/
+    
+    
     this.root.append(scoreBoard);
     const tablero = $('<div id="tablero"></div>');
     this.root.append(tablero);
