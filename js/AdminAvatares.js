@@ -28,8 +28,6 @@ function dibujarTablaAvatares(){
     )
     listarAvatares();
 }
-
-//.append($('<td>').append(avatar.nombre)) muestra el nombre
 function listarAvatares(){
     $.each(arrayAvaters, function(index, avatar){
         $('#avatares').append($('<tr>')
@@ -45,8 +43,8 @@ function dibujarTablaImagenes(){
     
     $("#Imagenes").empty();
     $('#Imagenes').append($('<tr>')
-    .append($('<th>')).append("nombre"))
-    
+    .append($('<th>').append("nombre"))
+    )
     listarImagenes();
 }
 
@@ -70,8 +68,9 @@ function editarAvatar(index){
     $("#editar-avatar").show(); ///etiqueta del html donde va a editar
      $(".editar-avatar").show();
 
-     $("#nombre-").val(arrayAvaters[index].nombre);
-     $("#puntos-").val(arrayAvaters[index].puntos);
+     //$("#nombre-").val(arrayAvaters[index].nombre);
+     $("#Avatar-portada").attr("src",arrayAvaters[index].nombre);
+     $("#puntos-").attr("src",agregarAvatar[index].nombre);
 }
 
 function editarImagen(index){
@@ -106,7 +105,7 @@ function eliminarImagen(index){
 $("#guardar-avatares").click(function(){
 
     if(localStorage.getItem("index-edit")!=null){
-        let nombre = $("#nombre-").val()
+        let nombre = $("#Avatar-portada").attr("src");
         let puntos = $("#puntos-").val();
         
 
@@ -120,7 +119,7 @@ $("#guardar-avatares").click(function(){
 
         localStorage.removeItem("index-edit")
 
-        $("#nombre-").val("");
+        $("#Avatar-portada").attr("src","")
         $("#puntos-").val("");
 
         $("#editar-avatar").hide();
@@ -142,7 +141,7 @@ if(localStorage.getItem("index-edit")!=null){
     let imagenes= arrayImagenes[localStorage.getItem("index-edit")].imagenes;
     //let index_imagenes = localStorage.getItem("index-edit");
 
-    console.log("hola");
+    //console.log("hola");
 
     let imagenes_edit = new Imagenes(nombre);
     //console.log(imagenes_edit);
@@ -183,7 +182,7 @@ $(".agregar-imagenes").show();
 ///boton agregar avatares//
 $("#btn-agregar-avatar").click(function(){
 
-    let nombre= $("#nombre-a").val();
+    let nombre= $("#portada-excursion-avatares").attr("src");
     let puntos = $("#puntos-a").val();
 
     if(nombre!="" && puntos !=""){
@@ -281,16 +280,27 @@ function readURL(input,id){
     }
 }
 
-//nueva imagen
+//nueva imagen Imagen
 $("#imgInp").change(function(){
     readURL(this,"portada-excursion-imagenes");
 })
 
-//editar imagen
+//nueva imagen  Avatar
+$("#imgInp1").change(function(){
+    readURL(this,"portada-excursion-avatares");
+})
+
+//editar imagen  
 $("#editarPortadaImagen").change(function(){
 readURL(this,"Imagenes-portada");
 })
 
+
+//editar imagen avatares
+
+$("#editarPortadaAvatar").change(function(){
+    readURL(this,"Avatar-portada");
+    })
 
 
 
