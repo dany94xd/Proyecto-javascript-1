@@ -1,5 +1,5 @@
 var arrayAvaters=JSON.parse(localStorage.getItem("personajes"));
-var arrayImagenes=JSON.parse(localStorage.getItem("imagenes"));
+var arrayImagenes=JSON.parse(localStorage.getItem("imagenese"));
 //var arrayAvatares;
 //console.log(arrayAvaters);
 //console.log(arrayImagenes);
