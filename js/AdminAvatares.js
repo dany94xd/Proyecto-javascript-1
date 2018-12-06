@@ -327,8 +327,8 @@ $("#editarPortadaAvatar").change(function(){
 
 
 
- //var descargar=document.getElementById("export-button");
-      //  descargar.addEventListener('click', exportJSON);
+ var descargar=document.getElementById("export-button");
+        descargar.addEventListener('click', exportJSON);
         
         function exportJSON() {
             //var IEwindow = window.open();
