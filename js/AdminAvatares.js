@@ -311,32 +311,3 @@ readURL(this,"Imagenes-portada");
 $("#editarPortadaAvatar").change(function(){
     readURL(this,"Avatar-portada");
     })
-<<<<<<< HEAD
-=======
-
-    //$("#btn-descargar-json").on('click', function() {
-
-        var descargar=document.getElementById("export-button");
-        descargar.addEventListener('click', exportJSON);
-        
-        function exportJSON() {
-            //var IEwindow = window.open();
-            //IEwindow.document.write('sep=,\r\n' + JSON.stringify(objJSON));
-            //IEwindow.document.close();
-            //IEwindow.document.execCommand('SaveAs', true, "datos.json");
-            //IEwindow.close();
-        
-            let dataStr ="avatares=["+ JSON.stringify(arrayAvaters)+"]\n";
-            dataStr = dataStr+"imagenes=["+JSON.stringify(arrayImagenes)+"]";
-            let dataUri = 'data:application/json;charset=utf-8,' + encodeURIComponent(dataStr);
-        
-            let exportFileDefaultName = '../objetos.json';
-        
-            let linkElement = document.createElement('a');
-            linkElement.setAttribute('href', dataUri);
-            linkElement.setAttribute('download', exportFileDefaultName);
-            linkElement.click();
-        }
-   // })
-    
->>>>>>> ffe1c9e348711279210806bd4d68439753c1d3d6
