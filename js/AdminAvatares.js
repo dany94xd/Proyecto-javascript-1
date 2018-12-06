@@ -95,7 +95,7 @@ function eliminarAvatar(index){
 function eliminarImagen(index){
     arrayImagenes.splice(index,1)
 
-    localStorage.setItem('arrayImagenes',JSON.stringify(arrayImagenes));
+    localStorage.setItem('imagenese',JSON.stringify(arrayImagenes));
     dibujarTablaImagenes();
 }
 
@@ -164,7 +164,7 @@ if(localStorage.getItem("index-edit")!=null){
           indice++;
         }
 arrayImagenes.push(imagenes_edit);
-        localStorage.setItem('imagenes', JSON.stringify(arrayImagenes));
+        localStorage.setItem('imagenese', JSON.stringify(arrayImagenes));
 
     //console.log(imagenes_edit);
 
@@ -236,7 +236,7 @@ $("#guardar-nueva-Imagenes").click(function(){
     if(nombre!=""){
         let imagenes_new = new Imagenes(nombre);
         arrayImagenes.push(imagenes_new);
-        localStorage.setItem('Imagenes', JSON.stringify(arrayImagenes));
+        localStorage.setItem('imagenese', JSON.stringify(arrayImagenes));
 
         dibujarTablaImagenes();
 
