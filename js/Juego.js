@@ -1,4 +1,5 @@
-var topGame= document.getElementById("idTopGame"); 
+var topGame= document.getElementById("idTopGame");
+var avatar =JSON.parse(localStorage.getItem("sesion"));
 // Obtiene la cantidad de filas por nivel
 function getRowCount(level) {
   return 2;
@@ -37,7 +38,7 @@ class Juego {
     this.tablero = this.genTablero(1);
     this.puntos = 0;
   }
- 
+
   getRand(max, min) {
     return Math.floor(Math.random() * (max - min));
   }
@@ -57,18 +58,18 @@ class Juego {
         userImage +
         '" /><h2>Puntos: <span id="score"></span></h2></div></div>'
     );
-    
-    
+
+
     /*&&&&&****PRUEBA******&&&&*/
     const scoreBoardDOS = $(
       '<div class="row"><div class="col"><img id="avatar" src="' +
         userImage +
         '" /><h2>Puntos: <span id="score"></span></h2></div></div>'
-    ); 
+    );
     //topGame.append(scoreBoardDOS);
     /******%%%% fin prueba%%%%%%*/
-    
-    
+
+
     this.root.append(scoreBoard);
     const tablero = $('<div id="tablero"></div>');
     this.root.append(tablero);
@@ -97,6 +98,15 @@ class Juego {
   updateScore() {
     console.log("puntos", this.puntos);
     this.saveScore(); // Guarda el score
+    avatar.puntos= this.puntos;
+    let arrayAvatares= JSON.parse(localStorage.getItem("personajes"));
+    for (var variable in arrayAvatares) {
+      if (arrayAvatares[variable].id==avatar.id) {
+         arrayAvatares[variable].puntos=this.puntos;
+         localStorage.setItem("sesion", JSON.stringify(avatar));
+         localStorage.setItem("personajes", JSON.stringify(arrayAvatares));
+      }
+    }
     this.root.find("#score").text(this.puntos);
   }
 
