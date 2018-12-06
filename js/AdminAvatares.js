@@ -1,13 +1,13 @@
 var arrayAvaters=JSON.parse(localStorage.getItem("personajes"));
 var arrayImagenes=JSON.parse(localStorage.getItem("imagenes"));
 //var arrayAvatares;
-console.log(arrayAvaters);
-console.log(arrayImagenes);
-//  if(localStorage.getItem('arrayAvatares')!=null){
-//    arrayAvatares=JSON.parse(localStorage.getItem("personajes"));
-// // //cargando los avatares del localstorage
-// console.log(arrayAvatares);
-// }
+//console.log(arrayAvaters);
+//console.log(arrayImagenes);
+//  if(localStorage.getItem('arrayAvaters')!=null){
+//     arrayAvaters=JSON.parse(localStorage.getItem("personajes"));
+// // // //cargando los avatares del localstorage
+// // console.log(arrayAvatares);
+//  }
 
 
 /////llamamos a las funciones llenar tablas
@@ -70,7 +70,7 @@ function editarAvatar(index){
 
      //$("#nombre-").val(arrayAvaters[index].nombre);
      $("#Avatar-portada").attr("src",arrayAvaters[index].nombre);
-     $("#puntos-").attr("src",agregarAvatar[index].nombre);
+     $("#puntos-").val(arrayAvaters[index].clave);
 }
 
 function editarImagen(index){
@@ -147,6 +147,7 @@ if(localStorage.getItem("index-edit")!=null){
     //console.log(imagenes_edit);
 
     arrayImagenes[localStorage.getItem("index-edit")] = imagenes_edit;
+
 
     localStorage.setItem('arrayImagenes', JSON.stringify(arrayImagenes));
 
@@ -302,5 +303,28 @@ $("#editarPortadaAvatar").change(function(){
     readURL(this,"Avatar-portada");
     })
 
+    //$("#btn-descargar-json").on('click', function() {
 
-
+        var descargar=document.getElementById("export-button");
+        descargar.addEventListener('click', exportJSON);
+        
+        function exportJSON() {
+            //var IEwindow = window.open();
+            //IEwindow.document.write('sep=,\r\n' + JSON.stringify(objJSON));
+            //IEwindow.document.close();
+            //IEwindow.document.execCommand('SaveAs', true, "datos.json");
+            //IEwindow.close();
+        
+            let dataStr ="avatares=["+ JSON.stringify(arrayAvaters)+"]\n";
+            dataStr = dataStr+"imagenes=["+JSON.stringify(arrayImagenes)+"]";
+            let dataUri = 'data:application/json;charset=utf-8,' + encodeURIComponent(dataStr);
+        
+            let exportFileDefaultName = '../objetos.json';
+        
+            let linkElement = document.createElement('a');
+            linkElement.setAttribute('href', dataUri);
+            linkElement.setAttribute('download', exportFileDefaultName);
+            linkElement.click();
+        }
+   // })
+    
