@@ -10,7 +10,6 @@ for (var img in datos) {
   var imagenAvatar = document.createElement("img");
 
   imagenAvatar.src= datos[img].nombre+'';
-  console.log(imagenAvatar);
   imagenAvatar.setAttribute("onclick","sesion("+img+")");
   var link = document.createElement("a");
   link.href='explicacion.html';
