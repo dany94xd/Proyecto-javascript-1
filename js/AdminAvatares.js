@@ -88,7 +88,7 @@ function editarImagen(index){
 function eliminarAvatar(index){
     arrayAvaters.splice(index,1)
 
-    localStorage.setItem('arrayAvatares',JSON.stringify(arrayAvaters));
+    localStorage.setItem('personajes',JSON.stringify(arrayAvaters));
     dibujarTablaAvatares();
 }
 

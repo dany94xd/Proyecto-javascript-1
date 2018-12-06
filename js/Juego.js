@@ -1,7 +1,7 @@
 var topGame= document.getElementById("idTopGame");
 var avatar =JSON.parse(localStorage.getItem("sesion"));
 //cadVariables=JSON.parse(localStorage.getItem("sesion"));
-
+var puntosTotal=avatar.puntos;
 // Obtiene la cantidad de filas por nivel
 function getRowCount(level) {
   return 2;
@@ -67,10 +67,10 @@ class Juego {
   // Elementos de bootstrap son cargadas y el tablero es generado(PINTADO), segunda parte de la carga del juego.
   bootstrap() {
     //const userImage = this.user + "_image";
-  
+
   // var time=0;
   // var myVar = setInterval(myTimer, 1000);
-  
+
     const userImage = this.user
     const scoreBoard = $(
       '<div class="row"><div class="col "> <h2>Puntos: <span  id="score"></span></h2></div></div>'
@@ -177,6 +177,15 @@ class Juego {
       // Fin del juego
       this.saveScore();
       this.gotoNextScreen();
+   avatar.puntos+=puntosTotal;
+   let arrayAvatares= JSON.parse(localStorage.getItem("personajes"));
+   for (var variable in arrayAvatares) {
+     if (arrayAvatares[variable].id==avatar.id) {
+        arrayAvatares[variable].puntos=avatar.puntos;
+
+        localStorage.setItem("personajes", JSON.stringify(arrayAvatares));
+     }
+   }
     }
     this.clearBoard();
     this.genTablero(this.level);
@@ -264,3 +273,4 @@ class Juego {
     return this.cardsImages.slice(0, maxCards);
   }
 }
+

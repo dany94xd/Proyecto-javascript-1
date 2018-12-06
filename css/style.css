@@ -12,6 +12,8 @@ height: 100vh;
 
 }
 
+
+
 a {
   color: #00B7FF;
 }
@@ -20,6 +22,12 @@ a {
   margin-top: 100px; 
   margin-bottom: 15px;
   border-collapse: collapse
+}
+
+
+.imgSize{
+  width: 150px;
+  height: 150px;
 }
 /***********/
 
