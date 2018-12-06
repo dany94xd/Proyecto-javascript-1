@@ -22,14 +22,14 @@ function getColCount(level) {
 }
 
 // /Codigo del tiempo
-function myTimer() {
+// function myTimer() {
 
-    document.getElementById("tiempo").innerHTML = time;
-    time++;
-}
+//     document.getElementById("tiempo").innerHTML = time;
+//     time++;
+// }
 
-var time=0;
- var myVar = setInterval(myTimer, 1000);
+// var time=0;
+//  var myVar = setInterval(myTimer, 1000);
 
 class Juego {
   constructor(images, user) {
