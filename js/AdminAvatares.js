@@ -18,7 +18,7 @@ dibujarTablaImagenes();
 ///////////////////llenando Tablas////////////////
 
 function dibujarTablaAvatares(){
- 
+
     $("#avatares").empty();
 
     $('#avatares').append($('<tr>')
@@ -40,7 +40,7 @@ function listarAvatares(){
 }
 
 function dibujarTablaImagenes(){
-    
+
     $("#Imagenes").empty();
     $('#Imagenes').append($('<tr>')
     .append($('<th>').append("nombre"))
@@ -55,7 +55,7 @@ function listarImagenes(){
     .append($("<td>").append(`<button onclick=editarImagen(${index})> Editar</button>`))
     .append($("<td>").append(`<button onclick=eliminarImagen(${index})> Eliminar</button>`))
         )
-        
+
     })
 }
 
@@ -79,7 +79,7 @@ function editarImagen(index){
     $(".editar-imagenes").show();
     $("#Imagenes-portada").attr("src", arrayImagenes[index].nombre);
 
-    
+
 }
 
 
@@ -107,13 +107,22 @@ $("#guardar-avatares").click(function(){
     if(localStorage.getItem("index-edit")!=null){
         let nombre = $("#Avatar-portada").attr("src");
         let puntos = $("#puntos-").val();
-        
+    let puntosact =parseInt(puntos,10);
 
-        let avatar_edit = new Avatar(nombre, puntos);
+        let avatar_edit = new Avatar(nombre, puntosact);
 
-        arrayAvaters[localStorage.getItem("index-edit")] = avatar_edit;
-
-        localStorage.setItem('arrayAvatares', JSON.stringify(arrayAvaters));
+        //arrayAvaters[localStorage.getItem("index-edit")] = avatar_edit;
+        let indice=0;
+        let foto= arrayAvaters[localStorage.getItem("index-edit")].nombre;
+        for (var variable in arrayAvaters) {
+        if(  foto==arrayAvaters[variable].nombre){
+          arrayAvaters.splice(indice,1);
+          break;
+          }
+          indice++;
+        }
+arrayAvaters.push(avatar_edit);
+        localStorage.setItem('personajes', JSON.stringify(arrayAvaters));
 
         dibujarTablaAvatares();
 
@@ -188,7 +197,7 @@ $("#btn-agregar-avatar").click(function(){
     if(nombre!="" && puntos !=""){
         let avatar_new = new Avatar(nombre,puntos);
         arrayAvaters.push(avatar_new);
-        localStorage.setItem('arrayAvatares', JSON.stringify(arrayAvaters));
+        localStorage.setItem('personajes', JSON.stringify(arrayAvaters));
 
         dibujarTablaAvatares();
 
@@ -197,7 +206,7 @@ $("#btn-agregar-avatar").click(function(){
 
     }else{
         alert("Llene los campos")
-    
+
     }
 
 });
@@ -222,7 +231,7 @@ $("#guardar-nueva-Imagenes").click(function(){
 
     }else{
         alert("Llene los campos")
-    
+
     }
 
 });
@@ -231,9 +240,9 @@ $("#guardar-nueva-Imagenes").click(function(){
 
 //agregar avatar///
 
-function agregarAvatar(avatar){
+/*function agregarAvatar(avatar){
     arrayAvaters.push(avatar);
-}
+}*/
 
 
 //agregar imagenes
@@ -290,7 +299,7 @@ $("#imgInp1").change(function(){
     readURL(this,"portada-excursion-avatares");
 })
 
-//editar imagen  
+//editar imagen
 $("#editarPortadaImagen").change(function(){
 readURL(this,"Imagenes-portada");
 })
@@ -301,6 +310,3 @@ readURL(this,"Imagenes-portada");
 $("#editarPortadaAvatar").change(function(){
     readURL(this,"Avatar-portada");
     })
-
-
-
