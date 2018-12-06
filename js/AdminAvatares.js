@@ -153,12 +153,25 @@ if(localStorage.getItem("index-edit")!=null){
     //console.log("hola");
 
     let imagenes_edit = new Imagenes(nombre);
+
+ let indice=0;
+        let foto= arrayImagenes[localStorage.getItem("index-edit")].nombre;
+        for (var variable in arrayImagenes) {
+        if(  foto==arrayImagenes[variable].nombre){
+          arrayImagenes.splice(indice,1);
+          break;
+          }
+          indice++;
+        }
+arrayImagenes.push(imagenes_edit);
+        localStorage.setItem('imagenes', JSON.stringify(arrayImagenes));
+
     //console.log(imagenes_edit);
 
-    arrayImagenes[localStorage.getItem("index-edit")] = imagenes_edit;
+    //arrayImagenes[localStorage.getItem("index-edit")] = imagenes_edit;
 
 
-    localStorage.setItem('arrayImagenes', JSON.stringify(arrayImagenes));
+    //localStorage.setItem('arrayImagenes', JSON.stringify(arrayImagenes));
 
     dibujarTablaImagenes();
 
@@ -223,7 +236,7 @@ $("#guardar-nueva-Imagenes").click(function(){
     if(nombre!=""){
         let imagenes_new = new Imagenes(nombre);
         arrayImagenes.push(imagenes_new);
-        localStorage.setItem('arrayImagenes', JSON.stringify(arrayImagenes));
+        localStorage.setItem('Imagenes', JSON.stringify(arrayImagenes));
 
         dibujarTablaImagenes();
 
@@ -247,9 +260,9 @@ $("#guardar-nueva-Imagenes").click(function(){
 
 
 //agregar imagenes
-function agregarImagenes(imagenes){
-    arrayImagenes.push(imagenes);
-}
+// function agregarImagenes(imagenes){
+//     arrayImagenes.push(imagenes);
+// }
 ///boton cancelar edicion
 $("#btnCancelarEditarAvatar").on('click', function(){
     $("#editar-avatar").hide();
