@@ -1,5 +1,7 @@
 var topGame= document.getElementById("idTopGame");
 var avatar =JSON.parse(localStorage.getItem("sesion"));
+//cadVariables=JSON.parse(localStorage.getItem("sesion"));
+
 // Obtiene la cantidad de filas por nivel
 function getRowCount(level) {
   return 2;
@@ -18,6 +20,16 @@ function getColCount(level) {
       return 2;
   }
 }
+
+// /Codigo del tiempo
+function myTimer() {
+
+    document.getElementById("tiempo").innerHTML = time;
+    time++;
+}
+
+var time=0;
+ var myVar = setInterval(myTimer, 1000);
 
 class Juego {
   constructor(images, user) {
@@ -49,14 +61,19 @@ class Juego {
     this.bootstrap();
   }
 
+
+
+
   // Elementos de bootstrap son cargadas y el tablero es generado(PINTADO), segunda parte de la carga del juego.
   bootstrap() {
     //const userImage = this.user + "_image";
-    const userImage=this.user
+  
+  // var time=0;
+  // var myVar = setInterval(myTimer, 1000);
+  
+    const userImage = this.user
     const scoreBoard = $(
-      '<div class="row"><div class="col"><img id="avatar" src="' +
-        userImage +
-        '" /><h2>Puntos: <span id="score"></span></h2></div></div>'
+      '<div class="row"><div class="col "> <h2>Puntos: <span  id="score"></span></h2></div></div>'
     );
 
 
@@ -77,6 +94,13 @@ class Juego {
     this.serveCards();
     this.updateScore();
   }
+
+  colocarAvatar(nombre){
+    let img = document.getElementById("avatar");
+    //var nombre="avatar1.png";
+    img.innerHTML="<img class='img-responsive' src="+nombre.nombre+">";
+  }
+
 
   // Genera html para visualizar las cartas del tablero y la inserta en el div con #tablero
   serveCards() {
