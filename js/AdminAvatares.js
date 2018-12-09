@@ -88,7 +88,7 @@ function editarImagen(index){
 function eliminarAvatar(index){
     arrayAvaters.splice(index,1)
 
-    localStorage.setItem('personajes',JSON.stringify(arrayAvaters));
+    localStorage.setItem('arrayAvatares',JSON.stringify(arrayAvaters));
     dibujarTablaAvatares();
 }
 
@@ -207,9 +207,9 @@ $("#btn-agregar-avatar").click(function(){
 
     let nombre= $("#portada-excursion-avatares").attr("src");
     let puntos = $("#puntos-a").val();
-
+  let puntosact =parseInt(puntos,10);
     if(nombre!="" && puntos !=""){
-        let avatar_new = new Avatar(nombre,puntos);
+        let avatar_new = new Avatar(nombre,puntosact);
         arrayAvaters.push(avatar_new);
         localStorage.setItem('personajes', JSON.stringify(arrayAvaters));
 
@@ -329,20 +329,20 @@ $("#editarPortadaAvatar").change(function(){
 
  var descargar=document.getElementById("export-button");
         descargar.addEventListener('click', exportJSON);
-        
+
         function exportJSON() {
             //var IEwindow = window.open();
             //IEwindow.document.write('sep=,\r\n' + JSON.stringify(objJSON));
             //IEwindow.document.close();
             //IEwindow.document.execCommand('SaveAs', true, "datos.json");
             //IEwindow.close();
-        
+
             let dataStr ="avatares=["+ JSON.stringify(arrayAvaters)+"]\n";
             dataStr = dataStr+"imagenes=["+JSON.stringify(arrayImagenes)+"]";
             let dataUri = 'data:application/json;charset=utf-8,' + encodeURIComponent(dataStr);
-        
+
             let exportFileDefaultName = '../objetos.json';
-        
+
             let linkElement = document.createElement('a');
             linkElement.setAttribute('href', dataUri);
             linkElement.setAttribute('download', exportFileDefaultName);

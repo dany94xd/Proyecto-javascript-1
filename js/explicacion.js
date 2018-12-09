@@ -5,7 +5,7 @@ colocarAvatar(cadVariables);
 function colocarAvatar(nombre){
   let img = document.getElementById("avatar");
   //var nombre="avatar1.png";
-  img.innerHTML="<img class='img-responsive imgSize' src="+nombre.nombre+">";
+  img.innerHTML="<img class='img-responsive' src="+nombre.nombre+">";
 }
 
 function llamar(){

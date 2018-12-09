@@ -22,7 +22,7 @@ class Card {
     const self = this;
     this.imgNode.fadeOut("fast", function() {
       console.log(this);
-      self.imgNode.attr("src", self.image);
+      self.imgNode.attr("src", self.image.nombre);
       self.imgNode.fadeIn("fast");
       console.log(self.imgNode);
     });
@@ -40,7 +40,7 @@ class Card {
 
   // Retorna true si la carta está mostrando la imagen de la carta
   isShown() {
-    return this.imgNode.attr("src") === this.image;
+    return this.imgNode.attr("src") === this.image.nombre;
   }
 
   // Configura el onclick de la carta con una función dada
