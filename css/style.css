@@ -5,35 +5,30 @@ font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 background-image: url("../img/iniciar.jpg") ;
 background-repeat: no-repeat;
 background-attachment: fixed;
-background-position: center; 
+background-position: center;
 background-size: cover;
 min-height: 100vh;
-height: 100vh;	
+height: 100vh;
 
 }
-
-
-
+.miImagen {
+width: 200px;
+  height: 200px;
+}
 a {
   color: #00B7FF;
 }
 /****avatar.html******/
 #avatares {
-  margin-top: 100px; 
+  margin-top: 100px;
   margin-bottom: 15px;
   border-collapse: collapse
-}
-
-
-.imgSize{
-  width: 150px;
-  height: 150px;
 }
 /***********/
 
 /****felicidades.html******/
 #idPremiacion {
-  margin-top: 100px; 
+  margin-top: 100px;
   margin-bottom: 15px;
   border-collapse: collapse
 }
@@ -60,7 +55,7 @@ iframe {
 .editar{
   display: none;
 }
- 
+
 #listar{padding-top: 150px;margin: 80px 20px;padding: 20px; box-shadow: 1px 1px 15px gray;background-color: white}
 
 .opacar img {

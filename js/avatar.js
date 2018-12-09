@@ -8,7 +8,7 @@ for (var img in datos) {
   var puntos= document.createElement("h4");
   puntos.textContent=datos[img].puntos+" puntos";
   var imagenAvatar = document.createElement("img");
-  imagenAvatar.className="rounded-circle imgSize"
+  imagenAvatar.className="rounded-circle miImagen"
   imagenAvatar.src= datos[img].nombre+'';
   imagenAvatar.setAttribute("onclick","sesion("+img+")");
   var link = document.createElement("a");
@@ -32,4 +32,3 @@ avatar= datos[indice];
   localStorage.setItem("sesion",JSON.stringify(avatar));
 
 }
-

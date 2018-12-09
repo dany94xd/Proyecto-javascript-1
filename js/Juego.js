@@ -162,6 +162,7 @@ class Juego {
 
   // Avanza a pantalla de resultados
   gotoNextScreen() {
+     juego.updateScore();
     window.location.href = "felicidades.html";
   }
 
@@ -273,4 +274,3 @@ class Juego {
     return this.cardsImages.slice(0, maxCards);
   }
 }
-
