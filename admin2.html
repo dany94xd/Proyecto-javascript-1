@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/main1.css">
+    <link rel="stylesheet" href="css/admin.css">
+
+
+
+      <!-- <link rel="stylesheet" href="css/style.css"> -->
+    <!-- <script type="text/javascript" src="personajes.json"></script> -->
+    <title>Administracion Imagenes</title>
+  </head>
+  <body>
+    <h1>Administración</h1>
+<!--    <a href="admin.html"> <button type="button" name="button">Menu Administracion</button> </a>-->
+    <a href="index.html"> <button class="btn btn-danger" type="button" name="button">Menu Principal</button> </a>
+
+   <!--        div carga avatares--> 
+    <div id="divUsuarios">
+            <h1>Lista de Avatares</h1>
+                <table id="avatares" class="table table-bordered table-dark">
+                </table><!--Tabla para listar los usuarios-->
+                <button id="btn-nuevo" class="btn btn-primary">Nuevo avatar</button>
+    </div>
+        <!--div agregar avatar  -->
+            <div id="fondoDivOculto" class="oculto agregar-avatar">
+                    <div id="agregar-avatar" class="oculto ventPop">
+                        <label for="avatar">
+                            Avatar:
+                            <!-- <input type="text" id="nombre-a"> -->
+                            <input type='file' id="imgInp1" />
+                            <img id="portada-excursion-avatares" src="#" alt="your image" width="100" height="100"/>
+            
+                        </label><br>
+                        <label for="avatar">
+                            Puntaje:
+                                <input type="text" id="puntos-a">
+                        </label>
+        
+                            <button id="btn-agregar-avatar">Guardar</button>
+                        <button id="btnCancelarAvatar">Cancelar</button>
+                </div>
+                </div>
+                
+        <!-- POPUP EDITAR AVATAR -->
+            <div id="fondoDivOculto" class="oculto editar-avatar">
+                <div id="editar-avatar" class="oculto ventPop">
+                    <label for="avatar">
+                        Avatar:
+                        <!----<input type="text" id="nombre-">-->
+                        <img src="#" width="100" height="100" id="Avatar-portada">
+                        <input type='file' id="editarPortadaAvatar" />
+                    </label><br>
+                    <label for="avatar">
+                        Puntaje:
+                            <input type="text" id="puntos-">
+                    </label>
+        
+                        <button id="guardar-avatares">Guardar</button>
+                        <button id="btnCancelarEditarAvatar">Cancelar</button>
+                </div>
+            </div>
+<!--        div carga imagenes-->
+            <div id="divImagenes">
+                <h1>Lista de Imagenes</h1>
+            <table id="Imagenes" class="table table-bordered table-dark">
+            </table><!--Tabla para listar las imagenes-->
+            <button id="btn-nueva-imagen" class="btn btn-primary">Nueva Imagen</button>
+            </div>
+
+
+            <div id="fondoDivOculto" class="oculto editar-imagenes">
+                <div id="editar-imagenes" class="oculto ventPop">
+                        <label for="Imagenes">
+                                Portada Imagen:
+                                <img src="#" width="100" height="100" id="Imagenes-portada">
+                                <input type='file' id="editarPortadaImagen" />
+                                    <!--<input type="text" id="excursion-portada">-->
+                        </label>
+                        <button id="guardar-imagenes">Guardar</button>
+                        <button id="btnCancelarEditarImagenes">Cancelar</button>
+                </div>
+            </div>
+
+            <!----agregando nueva imagen-->
+            <div id="fondoDivOculto" class="oculto agregar-imagenes">
+                    <div id="agregar-imagenes" class="oculto ventPop">
+                                <label for="Imagenes">
+                                        Portada URL:
+                                        <input type='file' id="imgInp" />
+                                        <img id="portada-excursion-imagenes" src="#" alt="your image" width="100" height="100"/>
+                                            <!--<input type="text" id="excursion-portada-a">-->                  
+                                          </label>
+                        <br>
+                                <button id="guardar-nueva-Imagenes">Agregar</button>
+                        <button id="btnCancelarNuevaImagenes">Cancelar</button>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                            <button id="export-button" type="button" class="btn btn-warning">
+                                    <a id="descargarjson" href="#" style="color:white; font-weight: 600;">Exportar JSON</a></button>
+                         </div>
+
+    <!-- <button id="btn-descargar-json" class="btn btn-primary">Descargar JSON </button> -->
+
+        
+
+
+        
+        
+<script src="js/jquery-3.2.1.js"></script>
+<script src="js/constructor.js"> </script>
+<script src="js/AdminAvatares.js"></script>
+
+
+
+<!-- <script type="text/javascript" src="js/classImagenes.js"></script>
+ <script type="text/javascript" src="js/adminImagenes.js"></script> -->
+
+  </body>
+</html>
